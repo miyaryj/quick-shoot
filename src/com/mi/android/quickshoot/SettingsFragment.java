@@ -15,12 +15,15 @@ public class SettingsFragment extends PreferenceFragment implements
         OnSharedPreferenceChangeListener {
     private QsSettings mSettings;
 
+    private CameraTorch mTorch;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.qs_settings);
-
+        mSettings = new QsSettings(getActivity());
+        mTorch = new CameraTorch();
         initialize();
         updateNotification();
     }
@@ -52,13 +55,25 @@ public class SettingsFragment extends PreferenceFragment implements
     }
 
     private void initialize() {
-        mSettings = new QsSettings(getActivity());
-
         SwitchPreference notificationEnabled = (SwitchPreference)findPreference(QsSettings.KEY_NOTIFICATION_ENABLED);
         notificationEnabled.setChecked(mSettings.isNotificationEnabled());
 
         CheckBoxPreference receiveBootComplete = (CheckBoxPreference)findPreference(QsSettings.KEY_RECEIVE_BOOT_COMPLETE);
         receiveBootComplete.setChecked(mSettings.receiveBootComplete());
+
+        SwitchPreference cameraFlash = (SwitchPreference)findPreference(QsSettings.KEY_CAMERA_TORCH);
+        cameraFlash.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                boolean enabled = (Boolean)newValue;
+                if (enabled) {
+                    mTorch.start();
+                } else {
+                    mTorch.stop();
+                }
+                return true;
+            }
+        });
 
         Preference appVersion = findPreference(QsSettings.KEY_APP_VERSION);
         appVersion.setSummary(mSettings.getAppVersion());

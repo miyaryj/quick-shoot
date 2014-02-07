@@ -12,8 +12,8 @@
     <string name="settings_receive_boot_complete">Start on booting-up</string>
     <string name="settings_receive_boot_complete_sub">Start showing when boot-up completed.</string>
     <string name="settings_divider_utility">Utility</string>
-    <string name="settings_camera_flash">Camera flash</string>
-    <string name="settings_camera_flash_sub">Turn on camera flash.</string>
+    <string name="settings_camera_torch">Torch</string>
+    <string name="settings_camera_torch_sub">Turn on camera flash.</string>
     <string name="settings_divider_general">General</string>
     <string name="settings_app_version">App version</string>
 

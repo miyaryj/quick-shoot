@@ -13,7 +13,7 @@ public class QsSettings {
 
     public static final String KEY_RECEIVE_BOOT_COMPLETE = "key_receive_boot_complete";
 
-    public static final String KEY_CAMERA_FLASH = "key_camera_flash";
+    public static final String KEY_CAMERA_TORCH = "key_camera_torch";
 
     public static final String KEY_APP_VERSION = "key_app_version";
 

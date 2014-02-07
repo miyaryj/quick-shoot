@@ -19,9 +19,9 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/settings_divider_utility" >
         <SwitchPreference
-            android:key="key_camera_flash"
-            android:summary="@string/settings_camera_flash_sub"
-            android:title="@string/settings_camera_flash" />
+            android:key="key_camera_torch"
+            android:summary="@string/settings_camera_torch_sub"
+            android:title="@string/settings_camera_torch" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/settings_divider_general" >
         <Preference
