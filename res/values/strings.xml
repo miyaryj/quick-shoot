@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Xperia&#8482; Quick Shoot</string>
+    <string name="quick_shoot_now">Quick shoot now</string>
+    <string name="quick_shoot_now_desc">Tap to quick-launch camera application.</string>
+    <string name="quick_shoot_ticker">Starting Quick Shoot!</string>
+    <string name="settings">Quick Shoot Settings</string>
+    <string name="qs_enabled">Enable Quick Shoot</string>
+    <string name="qs_enabled_desc">Show quick-shoot shortcut always in notification tray.</string>
+    <string name="receive_boot_complete">Start on booting-up</string>
+    <string name="receive_boot_complete_desc">Start showing when boot-up completed.</string>
+
+</resources>

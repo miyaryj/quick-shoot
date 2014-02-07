@@ -1,0 +1,10 @@
+.project
+.classpath
+.settings
+bin
+gen
+project.properties
+resource.properties
+semc-build-output
+*~
+
