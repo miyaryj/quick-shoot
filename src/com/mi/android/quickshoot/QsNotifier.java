@@ -1,3 +1,4 @@
+
 package com.mi.android.quickshoot;
 
 import android.app.Notification;
@@ -27,19 +28,18 @@ public class QsNotifier {
         Notification notification = new Notification.Builder(mContext)
                 .setTicker(mContext.getString(R.string.quick_shoot_ticker))
                 .setContentTitle(mContext.getString(R.string.app_name))
-                .setContentText(mContext.getString(R.string.quick_shoot_now_desc))
-                .setSmallIcon(R.drawable.notification_small)
-                .setContentIntent(pendingIntent)
-                .setOngoing(true)
-                .setWhen(0L)
-                .getNotification();
+                .setContentText(mContext.getString(R.string.quick_shoot_now_sub))
+                .setSmallIcon(R.drawable.notification_small).setContentIntent(pendingIntent)
+                .setOngoing(true).setWhen(0L).getNotification();
 
-        NotificationManager notificationMgr = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationMgr = (NotificationManager)mContext
+                .getSystemService(Context.NOTIFICATION_SERVICE);
         notificationMgr.notify(NOTIFICATIO_ID, notification);
     }
 
     public void clearNotification() {
-        NotificationManager notificationMgr = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationMgr = (NotificationManager)mContext
+                .getSystemService(Context.NOTIFICATION_SERVICE);
         notificationMgr.cancel(NOTIFICATIO_ID);
     }
 }

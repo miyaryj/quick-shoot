@@ -4,7 +4,7 @@ package com.mi.android.quickshoot;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class QsSettingsActivity extends Activity {
+public class SettingsActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,7 +12,7 @@ public class QsSettingsActivity extends Activity {
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(android.R.id.content, new QsSettingsFragment()).commit();
+                    .add(android.R.id.content, new SettingsFragment()).commit();
         }
     }
 

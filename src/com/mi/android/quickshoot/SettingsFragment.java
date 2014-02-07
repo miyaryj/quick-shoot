@@ -7,10 +7,11 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.SwitchPreference;
 
-public class QsSettingsFragment extends PreferenceFragment implements
+public class SettingsFragment extends PreferenceFragment implements
         OnSharedPreferenceChangeListener {
     private QsSettings mSettings;
 
@@ -58,6 +59,9 @@ public class QsSettingsFragment extends PreferenceFragment implements
 
         CheckBoxPreference receiveBootComplete = (CheckBoxPreference)findPreference(QsSettings.KEY_RECEIVE_BOOT_COMPLETE);
         receiveBootComplete.setChecked(mSettings.receiveBootComplete());
+
+        Preference appVersion = findPreference(QsSettings.KEY_APP_VERSION);
+        appVersion.setSummary(mSettings.getAppVersion());
     }
 
     private void updateNotification() {

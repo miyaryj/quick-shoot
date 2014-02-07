@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.view.KeyEvent;
 import android.widget.RemoteViews;
 
-public class QsShootWidgetProvider extends AppWidgetProvider {
+public class ShootWidgetProvider extends AppWidgetProvider {
 
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int N = appWidgetIds.length;

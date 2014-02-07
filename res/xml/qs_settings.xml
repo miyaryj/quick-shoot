@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <SwitchPreference
-        android:key="key_notification_enabled"
-        android:summary="@string/qs_enabled_desc"
-        android:title="@string/qs_enabled" />
+    <Preference
+        android:selectable="false"
+        android:summary="@string/settings_about" />
 
-    <CheckBoxPreference
-        android:dependency="key_notification_enabled"
-        android:key="key_receive_boot_complete"
-        android:summary="@string/receive_boot_complete_desc"
-        android:title="@string/receive_boot_complete" />
+    <PreferenceCategory android:title="@string/settings_divider_notification" >
+        <SwitchPreference
+            android:key="key_notification_enabled"
+            android:summary="@string/settings_notification_enabled_sub"
+            android:title="@string/settings_notification_enabled" />
+
+        <CheckBoxPreference
+            android:dependency="key_notification_enabled"
+            android:key="key_receive_boot_complete"
+            android:summary="@string/settings_receive_boot_complete_sub"
+            android:title="@string/settings_receive_boot_complete" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_divider_utility" >
+        <SwitchPreference
+            android:key="key_camera_flash"
+            android:summary="@string/settings_camera_flash_sub"
+            android:title="@string/settings_camera_flash" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_divider_general" >
+        <Preference
+            android:enabled="false"
+            android:key="key_app_version"
+            android:title="@string/settings_app_version" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
