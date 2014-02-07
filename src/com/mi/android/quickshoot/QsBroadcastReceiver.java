@@ -15,7 +15,7 @@ public class QsBroadcastReceiver extends BroadcastReceiver {
     }
 
     private void startNotification(Context context) {
-        if(QsPreferences.qsEnabled(context)) {
+        if(new QsSettings(context).isNotificationEnabled()) {
             QsNotifier notifier = new QsNotifier(context);
             notifier.showNotification();
         }
