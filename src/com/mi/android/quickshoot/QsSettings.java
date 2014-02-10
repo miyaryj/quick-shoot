@@ -9,6 +9,8 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.preference.PreferenceManager;
 
 public class QsSettings {
+    public static final String KEY_USE_QUICKLAUNCH = "key_use_quicklaunch";
+
     public static final String KEY_NOTIFICATION_ENABLED = "key_notification_enabled";
 
     public static final String KEY_RECEIVE_BOOT_COMPLETE = "key_receive_boot_complete";
@@ -16,6 +18,8 @@ public class QsSettings {
     public static final String KEY_CAMERA_TORCH = "key_camera_torch";
 
     public static final String KEY_APP_VERSION = "key_app_version";
+
+    private static boolean DEFAULT_USE_QUICKLAUNCH = true;
 
     private static boolean DEFAULT_NOTIFICATION_ENABLED = false;
 
@@ -32,6 +36,10 @@ public class QsSettings {
 
         mContext = context;
         mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+    }
+
+    public boolean useQuickLaunch() {
+        return mPrefs.getBoolean(KEY_USE_QUICKLAUNCH, DEFAULT_USE_QUICKLAUNCH);
     }
 
     public boolean isNotificationEnabled() {

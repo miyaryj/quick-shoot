@@ -48,13 +48,18 @@ public class SettingsFragment extends PreferenceFragment implements
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (QsSettings.KEY_NOTIFICATION_ENABLED.equals(key)
+        if (QsSettings.KEY_USE_QUICKLAUNCH.equals(key)) {
+            resetNotification();
+        } else if (QsSettings.KEY_NOTIFICATION_ENABLED.equals(key)
                 || QsSettings.KEY_RECEIVE_BOOT_COMPLETE.equals(key)) {
             updateNotification();
         }
     }
 
     private void initialize() {
+        CheckBoxPreference useQuickLaunch = (CheckBoxPreference)findPreference(QsSettings.KEY_USE_QUICKLAUNCH);
+        useQuickLaunch.setChecked(mSettings.useQuickLaunch());
+
         SwitchPreference notificationEnabled = (SwitchPreference)findPreference(QsSettings.KEY_NOTIFICATION_ENABLED);
         notificationEnabled.setChecked(mSettings.isNotificationEnabled());
 
@@ -77,6 +82,14 @@ public class SettingsFragment extends PreferenceFragment implements
 
         Preference appVersion = findPreference(QsSettings.KEY_APP_VERSION);
         appVersion.setSummary(mSettings.getAppVersion());
+    }
+
+    private void resetNotification() {
+        QsNotifier notifier = new QsNotifier(getActivity());
+        if (mSettings.isNotificationEnabled()) {
+            notifier.clearNotification();
+            notifier.showNotification();
+        }
     }
 
     private void updateNotification() {
