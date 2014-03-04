@@ -29,7 +29,7 @@ public class QsNotifier {
                 .setTicker(mContext.getString(R.string.quick_shoot_ticker))
                 .setContentTitle(mContext.getString(R.string.app_name))
                 .setContentText(mContext.getString(R.string.quick_shoot_now_sub))
-                .setSmallIcon(R.drawable.notification_small).setContentIntent(pendingIntent)
+                .setSmallIcon(R.drawable.qs_notification).setContentIntent(pendingIntent)
                 .setOngoing(true).setWhen(0L).getNotification();
 
         NotificationManager notificationMgr = (NotificationManager)mContext

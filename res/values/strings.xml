@@ -5,7 +5,7 @@
     <string name="quick_shoot_now">Quick shoot now</string>
     <string name="quick_shoot_now_sub">Tap to quick-launch camera application.</string>
     <string name="quick_shoot_ticker">Starting Quick Shoot!</string>
-    <string name="settings_about">Xperia&#8482; Quick Shoot is a simple application to quick-launch camera.</string>
+    <string name="settings_about">Xperia&#8482; Quick Shoot is a simple application to quick-launch camera. Start camera anytime from notification tray or by swiping-up home key (to be supported)!</string>
     <string name="settings_divider_general">General</string>
     <string name="settings_use_quicklaunch">Use quick-launch</string>
     <string name="settings_use_quicklaunch_sub">Use quick-launch intent to start camera application.</string>
