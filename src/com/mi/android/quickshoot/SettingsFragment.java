@@ -15,7 +15,7 @@ public class SettingsFragment extends PreferenceFragment implements
         OnSharedPreferenceChangeListener {
     private QsSettings mSettings;
 
-    private CameraTorch mTorch;
+    private CameraUtils.Toach mTorch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class SettingsFragment extends PreferenceFragment implements
 
         addPreferencesFromResource(R.xml.qs_settings);
         mSettings = new QsSettings(getActivity());
-        mTorch = new CameraTorch();
+        mTorch = CameraUtils.getToach();
         initialize();
         updateNotification();
     }

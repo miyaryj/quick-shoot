@@ -6,13 +6,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.view.KeyEvent;
 
 public class QsNotifier {
-    private static final String PACKAGE_CAMERA = "com.sonyericsson.android.camera";
-
-    private static final String CLASS_CAMERA_ACTIVITY = PACKAGE_CAMERA + ".CameraActivity";
-
     private static final int NOTIFICATIO_ID = 0;
 
     private final Context mContext;
@@ -45,18 +40,11 @@ public class QsNotifier {
 
     private PendingIntent getCameraIntent() {
         if (new QsSettings(mContext).useQuickLaunch()) {
-            Intent intent = new Intent(Intent.ACTION_CAMERA_BUTTON, null);
-            KeyEvent keyEvent = new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_CAMERA);
-            intent.putExtra(Intent.EXTRA_KEY_EVENT, keyEvent);
-            intent.putExtra(Intent.EXTRA_SUBJECT, "start");
+            Intent intent = CameraUtils.getQuickLaunchIntent(mContext);
             return PendingIntent.getBroadcast(mContext, 0, intent, 0);
 
         } else {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.setClassName(PACKAGE_CAMERA, CLASS_CAMERA_ACTIVITY);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                    | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
-            intent.addCategory(Intent.CATEGORY_LAUNCHER);
+            Intent intent = CameraUtils.getLaunchIntent(mContext);
             return PendingIntent.getActivity(mContext, 0, intent, 0);
         }
     }
