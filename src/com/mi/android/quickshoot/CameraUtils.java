@@ -4,6 +4,7 @@ package com.mi.android.quickshoot;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Camera;
+import android.os.AsyncTask;
 import android.view.KeyEvent;
 
 public class CameraUtils {
@@ -34,26 +35,42 @@ public class CameraUtils {
     public static class Toach {
         private Camera mCamera;
 
-        Toach() {
+        private Toach() {
         }
 
-        void start() {
-            try {
-                mCamera = Camera.open();
-            } catch (RuntimeException e) {
-                Logger.e("Failed to open Camera", e);
-            }
+        public void start() {
+            new AsyncTask<Void, Void, Void>() {
+                @Override
+                protected Void doInBackground(Void... params) {
+                    synchronized (Toach.this) {
+                        try {
+                            mCamera = Camera.open();
+                        } catch (RuntimeException e) {
+                            Logger.e("Failed to open Camera", e);
+                        }
 
-            Camera.Parameters params = mCamera.getParameters();
-            params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-            mCamera.setParameters(params);
-            mCamera.startPreview();
+                        Camera.Parameters cameraParams = mCamera.getParameters();
+                        cameraParams.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                        mCamera.setParameters(cameraParams);
+                        mCamera.startPreview();
+                        return null;
+                    }
+                }
+            }.execute();
         }
 
-        void stop() {
-            if (mCamera != null) {
-                mCamera.release();
-            }
+        public void stop() {
+            new AsyncTask<Void, Void, Void>() {
+                @Override
+                protected Void doInBackground(Void... params) {
+                    synchronized (Toach.this) {
+                        if (mCamera != null) {
+                            mCamera.release();
+                        }
+                        return null;
+                    }
+                }
+            }.execute();
         }
     }
 
