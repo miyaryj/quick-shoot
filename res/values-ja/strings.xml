@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="notification_sub_quick">タップしてカメラをクイック起動</string>
+    <string name="notification_sub_normal">タップしてカメラを起動</string>
+    <string name="notification_ticker">Quick Shootを起動中</string>
+    <string name="settings_about">Xperia&#8482; Quick Shootはカメラアプリをクイック起動するアプリです。Homeキーを上スワイプするか、Notificationトレイからいつでも撮影を撮影できます。</string>
+    <string name="settings_divider_general">一般</string>
+    <string name="settings_use_quicklaunch">クイック起動を使う</string>
+    <string name="settings_use_quicklaunch_sub">カメラアプリの起動にクイック起動Intentを使う</string>
+    <string name="settings_notification_enabled">Notification</string>
+    <string name="settings_notification_enabled_sub">NotificationトレイにQuick-shootショートカットを常に表示</string>
+    <string name="settings_receive_boot_complete">起動時に開始</string>
+    <string name="settings_receive_boot_complete_sub">端末起動時に自動でNotificationを表示する</string>
+    <string name="settings_divider_utility">ユーティリティ</string>
+    <string name="settings_camera_torch">ランプ</string>
+    <string name="settings_camera_torch_sub">カメラのフラッシュを点灯する</string>
+    <string name="settings_app_version">アプリバージョン</string>
+
+</resources>

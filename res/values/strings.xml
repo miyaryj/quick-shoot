@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Xperia&#8482; Quick Shoot</string>
-    <string name="quick_shoot_now">Quick shoot now</string>
-    <string name="quick_shoot_now_sub">Tap to quick-launch camera application.</string>
-    <string name="quick_shoot_ticker">Starting Quick Shoot!</string>
-    <string name="settings_about">Xperia&#8482; Quick Shoot is a simple application to quick-launch camera. Start camera anytime from notification tray or by swiping-up home key (to be supported)!</string>
+    <string name="notification_sub_quick">Tap to quick-launch camera app.</string>
+    <string name="notification_sub_normal">Tap to launch camera app.</string>
+    <string name="notification_ticker">Starting Quick Shoot!</string>
+    <string name="settings_about">Xperia&#8482; Quick Shoot is a simple app to quick-launch camera. Start shooting anytime by swiping-up home key or from notification tray!</string>
     <string name="settings_divider_general">General</string>
     <string name="settings_use_quicklaunch">Use quick-launch</string>
-    <string name="settings_use_quicklaunch_sub">Use quick-launch intent to start camera application.</string>
+    <string name="settings_use_quicklaunch_sub">Use quick-launch intent to start camera app.</string>
     <string name="settings_notification_enabled">Enable notification</string>
     <string name="settings_notification_enabled_sub">Show quick-shoot shortcut always in notification tray.</string>
     <string name="settings_receive_boot_complete">Start on booting-up</string>
-    <string name="settings_receive_boot_complete_sub">Start showing when boot-up completed.</string>
-    <string name="settings_app_version">App version</string>
+    <string name="settings_receive_boot_complete_sub">Start showing notification when boot-up completed.</string>
     <string name="settings_divider_utility">Utility</string>
     <string name="settings_camera_torch">Torch</string>
     <string name="settings_camera_torch_sub">Turn on camera flash.</string>
+    <string name="settings_app_version">App version</string>
 
 </resources>

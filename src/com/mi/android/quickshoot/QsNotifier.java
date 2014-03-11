@@ -17,13 +17,14 @@ public class QsNotifier {
     }
 
     public void showNotification() {
-        PendingIntent pendingIntent = getCameraIntent();
+        boolean useQuickLaunch = new QsSettings(mContext).useQuickLaunch();
+        String text = getText(useQuickLaunch);
+        PendingIntent pendingIntent = getCameraIntent(useQuickLaunch);
 
         @SuppressWarnings("deprecation")
         Notification notification = new Notification.Builder(mContext)
-                .setTicker(mContext.getString(R.string.quick_shoot_ticker))
-                .setContentTitle(mContext.getString(R.string.app_name))
-                .setContentText(mContext.getString(R.string.quick_shoot_now_sub))
+                .setTicker(mContext.getString(R.string.notification_ticker))
+                .setContentTitle(mContext.getString(R.string.app_name)).setContentText(text)
                 .setSmallIcon(R.drawable.qs_notification).setContentIntent(pendingIntent)
                 .setOngoing(true).setWhen(0L).getNotification();
 
@@ -38,11 +39,18 @@ public class QsNotifier {
         notificationMgr.cancel(NOTIFICATIO_ID);
     }
 
-    private PendingIntent getCameraIntent() {
-        if (new QsSettings(mContext).useQuickLaunch()) {
+    private String getText(boolean useQuickLaunch) {
+        if (useQuickLaunch) {
+            return mContext.getString(R.string.notification_sub_quick);
+        } else {
+            return mContext.getString(R.string.notification_sub_normal);
+        }
+    }
+
+    private PendingIntent getCameraIntent(boolean useQuickLaunch) {
+        if (useQuickLaunch) {
             Intent intent = CameraUtils.getQuickLaunchIntent(mContext);
             return PendingIntent.getBroadcast(mContext, 0, intent, 0);
-
         } else {
             Intent intent = CameraUtils.getLaunchIntent(mContext);
             return PendingIntent.getActivity(mContext, 0, intent, 0);

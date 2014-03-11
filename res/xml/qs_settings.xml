@@ -21,17 +21,17 @@
             android:key="key_receive_boot_complete"
             android:summary="@string/settings_receive_boot_complete_sub"
             android:title="@string/settings_receive_boot_complete" />
-
-        <Preference
-            android:enabled="false"
-            android:key="key_app_version"
-            android:title="@string/settings_app_version" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/settings_divider_utility" >
         <SwitchPreference
             android:key="key_camera_torch"
             android:summary="@string/settings_camera_torch_sub"
             android:title="@string/settings_camera_torch" />
+
+        <Preference
+            android:enabled="false"
+            android:key="key_app_version"
+            android:title="@string/settings_app_version" />
     </PreferenceCategory>
 
 </PreferenceScreen>
