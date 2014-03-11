@@ -3,7 +3,7 @@
  * All rights, including trade secret rights, reserved.
  */
 
-package com.mi.android.quickshoot;
+package com.miyaryj.android.quickshoot;
 
 import android.util.Log;
 

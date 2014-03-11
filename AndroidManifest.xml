@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mi.android.quickshoot"
-    android:versionCode="110"
-    android:versionName="1.1.0" >
+    package="com.miyaryj.android.quickshoot"
+    android:versionCode="100"
+    android:versionName="1.0.0" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:theme="@style/QsTheme" >
         <activity
-            android:name="com.mi.android.quickshoot.SettingsActivity"
+            android:name="com.miyaryj.android.quickshoot.SettingsActivity"
             android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.mi.android.quickshoot.BridgeActivity"
+            android:name="com.miyaryj.android.quickshoot.BridgeActivity"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
             android:theme="@style/QsTheme.Panel" >
@@ -45,13 +45,13 @@
         </activity>
 
         <receiver
-            android:name="com.mi.android.quickshoot.QsBroadcastReceiver"
+            android:name="com.miyaryj.android.quickshoot.QsBroadcastReceiver"
             android:enabled="false" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.mi.android.quickshoot.ShootWidgetProvider" >
+        <receiver android:name="com.miyaryj.android.quickshoot.ShootWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="android.appwidget.action.APPWIDGET_DISABLED" />

@@ -1,5 +1,5 @@
 
-package com.mi.android.quickshoot;
+package com.miyaryj.android.quickshoot;
 
 import android.app.Activity;
 import android.os.Bundle;
